@@ -1,0 +1,18 @@
+server:
+  port: 18620
+spring:
+  application:
+    name: KoroWorld_ServerCore
+  datasource:
+    url: jdbc:h2:~/.kwc/database
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: 123456
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      path: /h2admin
+      enabled: true
