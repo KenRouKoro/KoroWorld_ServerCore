@@ -10,4 +10,5 @@ import javax.persistence.Id;
 public class PlayerData {
     @Id
     protected String UUID;
+    protected String nickName;
 }
