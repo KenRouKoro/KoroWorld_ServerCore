@@ -24,7 +24,7 @@ public class ServerCaseService {
     @PostMapping("/lock")
     public String lock(@RequestParam Map<String, Object> params){
         String key = (String) params.get("key");
-        String UUID = (String)params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
         String id = (String) params.get("id");
 
         ServerCaseData serverCaseData = serverCaseRepository.findByUUIDWithID(UUID+id);
@@ -45,7 +45,7 @@ public class ServerCaseService {
 
     @PostMapping("/use")
     public String use(@RequestParam Map<String, Object> params){
-        String UUID = (String)params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
         String id = (String) params.get("id");
 
         ServerCaseData serverCaseData = serverCaseRepository.findByUUIDWithID(UUID+id);
@@ -59,7 +59,7 @@ public class ServerCaseService {
 
     @PostMapping("/upload")
     public String upload(@RequestParam Map<String, Object> params) {
-        String UUID = (String) params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
         String itemData = (String) params.get("SNBT");
         String id = (String) params.get("id");
 
@@ -79,7 +79,7 @@ public class ServerCaseService {
 
     @PostMapping("/download")
     public String download(@RequestParam Map<String, Object> params){
-        String UUID = (String) params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
         String id = (String) params.get("id");
 
         ServerCaseData serverCaseData = serverCaseRepository.findByUUIDWithID(UUID+id);

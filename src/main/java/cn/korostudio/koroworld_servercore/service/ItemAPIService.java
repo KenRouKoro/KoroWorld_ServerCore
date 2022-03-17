@@ -18,7 +18,7 @@ public class ItemAPIService {
 
     @PostMapping("/upload")
     public String upload(@RequestParam Map<String, Object> params) {
-        String UUID = (String) params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
         String playerItemData = (String) params.get("SNBT");
 
         logger.info("Data from Player UUID: "+UUID+" is get.");
@@ -34,7 +34,7 @@ public class ItemAPIService {
 
     @PostMapping("/download")
     public String download(@RequestParam Map<String, Object> params){
-        String UUID = (String) params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
 
         PlayerItems playerItems = playerItemsRepository.findByUUID(UUID);
         if(playerItems==null) {
@@ -47,7 +47,7 @@ public class ItemAPIService {
     @PostMapping("/lock")
     public String lock(@RequestParam Map<String, Object> params){
         String key = (String) params.get("key");
-        String UUID = (String)params.get("UUID");
+        String UUID = ((String) params.get("UUID"))+((String) params.get("group"));
 
         PlayerItems playerItems = playerItemsRepository.findByUUID(UUID);
 

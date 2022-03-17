@@ -14,6 +14,7 @@ public class ServerCaseData {
     @Lob
     private String SNBT ;
     private String id;
+    private String itemGroup;
     private boolean lock = false;
     private boolean use = false;
 }

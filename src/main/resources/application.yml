@@ -4,7 +4,7 @@ spring:
   application:
     name: KoroWorld_ServerCore
   datasource:
-    url: jdbc:h2:~/.kwc/database
+    url: jdbc:h2:file:./koroworld/database
     driver-class-name: org.h2.Driver
     username: admin
     password: 123456
@@ -12,6 +12,7 @@ spring:
     database: h2
     hibernate:
       ddl-auto: update
+    show-sql: false
   h2:
     console:
       path: /h2admin

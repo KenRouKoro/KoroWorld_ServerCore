@@ -13,5 +13,7 @@ public class PlayerItems {
     private String UUID;
     @Lob
     private String playerItemData;
+    private String itemGroup;
     private boolean lock=true;
+
 }
